@@ -1,3 +1,5 @@
+import { STATUS } from "@/constants";
+import { useAuthStore } from "@/store/auth";
 import {
   Box,
   Button,
@@ -9,10 +11,18 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 export const Login = () => {
+  const [loading, setloading] = useState(false);
+
+  const login = () => {
+    setloading(true);
+    window.location.href =
+      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=http://localhost:3000";
+  };
+
   return (
     <Center minH={"89vh"}>
       <Card variant={"outline"} bg={"#111214"} border={"1px solid #343A40"} p={10} w={"30%"}>
@@ -27,6 +37,8 @@ export const Login = () => {
           _hover={{ bg: "none" }}
           border={"1px solid #707172"}
           size={"lg"}
+          isLoading={loading}
+          onClick={login}
         >
           Login With Google
         </Button>
