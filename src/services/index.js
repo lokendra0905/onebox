@@ -1,3 +1,5 @@
+"use client"
+
 import { create } from "apisauce";
 
 export const URIS = {
