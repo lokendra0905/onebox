@@ -14,7 +14,7 @@ export default function Home() {
   useEffect(() => {
     let token = search.get("token");
     if (token) {
-      localStorage.setItem("token", token);
+      window.localStorage.setItem("token", token);
       setAuthToken(token);
     }
   }, []);
