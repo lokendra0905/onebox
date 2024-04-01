@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { create } from "apisauce";
 
@@ -21,8 +21,11 @@ let api = create({
   },
   timeout: 6000,
 });
-const token = window.localStorage.getItem("token");
-api.setHeader("Authorization", "Bearer " + token);
+
+if (typeof window !== "undefined") {
+  const token = window.localStorage.getItem("token");
+  api.setHeader("Authorization", "Bearer " + token);
+}
 
 export const setAuthToken = (token) => {
   api.setHeader("Authorization", "Bearer " + token);
