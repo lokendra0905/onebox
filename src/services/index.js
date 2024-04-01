@@ -19,7 +19,7 @@ let api = create({
   },
   timeout: 6000,
 });
-const token = localStorage.getItem("token");
+const token = window.localStorage.getItem("token");
 api.setHeader("Authorization", "Bearer " + token);
 
 export const setAuthToken = (token) => {

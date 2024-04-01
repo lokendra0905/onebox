@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const router = useRouter();
 
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    let token = window.localStorage.getItem("token");
     if (token == "null" || !token) {
       router.push("/login");
       ErrorAlert("Invalid Token");
