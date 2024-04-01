@@ -4,8 +4,10 @@ export const URIS = {
   /* Authentication */
   GOOGLE_AUTH: "/auth/google-login",
   /* Onbox */
-
   GET_LIST: "/onebox/list",
+  GET_THREAD: "/onebox/messages",
+  ADD_REPLY: "/onebox/reply",
+  RESET_ONEBOX: "/onebox/reset",
 };
 
 let api = create({
@@ -17,9 +19,11 @@ let api = create({
   },
   timeout: 6000,
 });
-
 const token = localStorage.getItem("token");
+api.setHeader("Authorization", "Bearer " + token);
 
-api.setHeader("Authorization", "Bearer " + token );
+export const setAuthToken = (token) => {
+  api.setHeader("Authorization", "Bearer " + token);
+};
 
 export { api as apiClient };

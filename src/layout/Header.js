@@ -7,7 +7,7 @@ export const Header = () => {
       h={"10vh"}
       p={5}
       bgColor={useColorModeValue("#121212", "white")}
-      borderBottom={"1px solid #343A40"}
+      borderBottom={useColorModeValue("1px solid #343A40", "1px solid #DEDEDE")}
     >
       <Image src="/assets/logo.png" alt="logo" />
     </Center>

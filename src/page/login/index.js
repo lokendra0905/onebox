@@ -24,8 +24,8 @@ export const Login = () => {
   };
 
   return (
-    <Center minH={"89vh"}>
-      <Card variant={"outline"} bg={"#111214"} border={"1px solid #343A40"} p={10} w={"30%"}>
+    <Center minH={"88.5vh"}>
+      <Card variant={"outline"} bg={"#111214"} border={useColorModeValue("1px solid #343A40", "1px solid #DEDEDE")} p={10} w={"30%"}>
         <Text textAlign={"center"} color={useColorModeValue("white", "black")} fontSize={"x-large"}>
           Create a new Account
         </Text>

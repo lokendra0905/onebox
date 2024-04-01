@@ -1,8 +1,8 @@
 import { FaInbox } from "react-icons/fa";
 import { GoHomeFill } from "react-icons/go";
 import { BiSolidUser } from "react-icons/bi";
-import { MdEmail } from "react-icons/md";
-import { BsFillSendFill } from "react-icons/bs";
+import { MdDelete, MdEmail, MdModeEditOutline, MdOutlineMarkunreadMailbox } from "react-icons/md";
+import { BsClock, BsFillPersonDashFill, BsFillSendFill } from "react-icons/bs";
 import { RiBarChartFill } from "react-icons/ri";
 
 export const STATUS = {

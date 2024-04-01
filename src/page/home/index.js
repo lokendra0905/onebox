@@ -1,9 +1,18 @@
+import { useOneboxStore } from "@/store/onebox";
 import { Box, Center, Image, Text, useColorModeValue } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 export const HomePage = () => {
+  const { resetOneboxAction } = useOneboxStore((s) => ({
+    resetOneboxAction: s.resetOneboxAction,
+  }));
+
+  useEffect(() => {
+    resetOneboxAction();
+  }, [resetOneboxAction]);
+
   return (
-    <Center minH={"88vh"} color={useColorModeValue("white", "black")}>
+    <Center minH={"88.5vh"} color={useColorModeValue("white", "black")}>
       <Box textAlign={"center"}>
         <Image src="/assets/no-message.png" alt="No Message" m={"auto"} />
         <Text fontWeight={"bold"} mt={5} fontSize={"x-large"}>

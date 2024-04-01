@@ -23,7 +23,7 @@ export const Sidebar = () => {
       w={"20"}
       h={"100vh"}
       bg={useColorModeValue("#121212", "white")}
-      borderRight={"1px solid #343A40"}
+      borderRight={useColorModeValue("1px solid #343A40", "1px solid #DEDEDE")}
     >
       <Flex justify={"space-between"} direction={"column"} h={"100%"} py={4}>
         <Box>

@@ -1,12 +1,14 @@
 import { STATUS } from "@/constants";
 import { apis } from "@/services/api";
 import { ErrorAlert, SuccessAlert } from "@/utils/Helper";
+import { filter } from "lodash";
 import { create } from "zustand";
 
 export const useOneboxStore = create((set, get) => ({
   resetStatus: async () => {
     set({
-      getListStatus: STATUS.NOT_STARTED,
+      addReplyStatus: STATUS.NOT_STARTED,
+      deleteThreadStatus: STATUS.NOT_STARTED,
     });
   },
 
@@ -17,7 +19,54 @@ export const useOneboxStore = create((set, get) => ({
       set({ getListStatus: STATUS.SUCCESS, oneboxData: data.data });
     } else {
       set({ getListStatus: STATUS.FAILED });
-      ErrorAlert(data?.errorMessage || "Something Went Wrong");
+    }
+  },
+
+  getThreadAction: async (payload) => {
+    set({ getThreadStatus: STATUS.FETCHING });
+    const { data, ok } = await apis.getThreadApi(payload);
+    if (ok) {
+      set({ getThreadStatus: STATUS.SUCCESS, threadDetails: data.data });
+    } else {
+      set({ getThreadStatus: STATUS.FAILED });
+    }
+  },
+
+  resetOneboxAction: async (payload) => {
+    set({ resetOneboxStatus: STATUS.FETCHING });
+    const { ok } = await apis.resetOneboxApi(payload);
+    if (ok) {
+      set({ resetOneboxStatus: STATUS.SUCCESS });
+    } else {
+      set({ resetOneboxStatus: STATUS.FAILED });
+    }
+  },
+
+  deleteThreadAction: async (payload) => {
+    set({ deleteThreadStatus: STATUS.FETCHING });
+    const { data, ok } = await apis.deleteThreadApi(payload);
+    if (ok) {
+      const oneboxData = get().oneboxData;
+      set({
+        deleteThreadStatus: STATUS.SUCCESS,
+        oneboxData: filter(oneboxData, (email) => email.threadId !== payload),
+      });
+      SuccessAlert("Thread Deleted");
+    } else {
+      set({ deleteThreadStatus: STATUS.FAILED });
+      ErrorAlert(data.message);
+    }
+  },
+
+  addReplyAction: async (threadId, payload) => {
+    set({ addReplyStatus: STATUS.FETCHING });
+    const { data, ok } = await apis.addReplyApi(threadId, payload);
+    if (ok) {
+      set({ addReplyStatus: STATUS.SUCCESS, threadDetails: data.data });
+      SuccessAlert("Reply Send");
+    } else {
+      set({ addReplyStatus: STATUS.FAILED });
+      ErrorAlert(data.message);
     }
   },
 }));

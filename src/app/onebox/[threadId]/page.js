@@ -3,10 +3,10 @@
 import { MainLayout } from "@/layout/MainLayout";
 import { Onebox } from "@/page/onebox";
 
-export default function Page() {
+export default function Page({ params }) {
   return (
     <MainLayout>
-      <Onebox />
+      <Onebox threadId={params?.threadId} />
     </MainLayout>
   );
 }
