@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
     let token = window.localStorage.getItem("token");
     if (token == "null" || !token) {
       router.push("/login");
-      ErrorAlert("Invalid Token");
+    //   ErrorAlert("Invalid Token");
     }
   }, [router]);
 
