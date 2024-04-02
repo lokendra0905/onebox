@@ -6,10 +6,13 @@ export const HomePage = () => {
   const { resetOneboxAction } = useOneboxStore((s) => ({
     resetOneboxAction: s.resetOneboxAction,
   }));
+  console.log(process.env);
 
   useEffect(() => {
     resetOneboxAction();
   }, [resetOneboxAction]);
+
+  
 
   return (
     <Center minH={"88.5vh"} color={useColorModeValue("white", "black")}>

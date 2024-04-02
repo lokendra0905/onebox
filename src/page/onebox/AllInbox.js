@@ -42,7 +42,6 @@ export const AllInbox = ({ msgId }) => {
       getListAction();
     }
   }, [getListAction]);
-  console.log(msgId)
 
   return (
     <Box

@@ -50,6 +50,7 @@ export const useOneboxStore = create((set, get) => ({
       set({
         deleteThreadStatus: STATUS.SUCCESS,
         oneboxData: filter(oneboxData, (email) => email.threadId !== payload),
+        threadDetails: null,
       });
       SuccessAlert("Thread Deleted");
     } else {

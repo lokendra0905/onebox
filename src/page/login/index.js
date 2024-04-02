@@ -1,13 +1,9 @@
 import { STATUS } from "@/constants";
 import { useAuthStore } from "@/store/auth";
 import {
-  Box,
   Button,
   Card,
-  CardHeader,
   Center,
-  Flex,
-  Heading,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -16,11 +12,11 @@ import { FcGoogle } from "react-icons/fc";
 
 export const Login = () => {
   const [loading, setloading] = useState(false);
-
+console.log(process.env)
   const login = () => {
     setloading(true);
     window.location.href =
-      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://onebox-azure.vercel.app";
+      `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${process.env.FRONTEND_URL}`
   };
 
   return (
