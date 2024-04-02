@@ -16,7 +16,7 @@ console.log(process.env)
   const login = () => {
     setloading(true);
     window.location.href =
-      `https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=${process.env.FRONTEND_URL}`
+      "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://onebox-azure.vercel.app";
   };
 
   return (
