@@ -47,9 +47,12 @@ export const useOneboxStore = create((set, get) => ({
     const { data, ok } = await apis.deleteThreadApi(payload);
     if (ok) {
       const oneboxData = get().oneboxData;
+      const filterdData = filter(oneboxData, (email) => email.threadId != payload);
+      console.log(payload)
+      console.log(filterdData)
       set({
         deleteThreadStatus: STATUS.SUCCESS,
-        oneboxData: filter(oneboxData, (email) => email.threadId !== payload),
+        oneboxData: filterdData,
         threadDetails: null,
       });
       SuccessAlert("Thread Deleted");

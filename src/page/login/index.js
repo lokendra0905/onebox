@@ -1,18 +1,10 @@
-import { STATUS } from "@/constants";
-import { useAuthStore } from "@/store/auth";
-import {
-  Button,
-  Card,
-  Center,
-  Text,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { Button, Card, Center, Text, useColorModeValue } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 
 export const Login = () => {
   const [loading, setloading] = useState(false);
-console.log(process.env)
+  console.log(process.env);
   const login = () => {
     setloading(true);
     window.location.href =
@@ -21,7 +13,13 @@ console.log(process.env)
 
   return (
     <Center minH={"88.5vh"}>
-      <Card variant={"outline"} bg={"#111214"} border={useColorModeValue("1px solid #343A40", "1px solid #DEDEDE")} p={10} w={"30%"}>
+      <Card
+        variant={"outline"}
+        bg={"#111214"}
+        border={useColorModeValue("1px solid #343A40", "1px solid #DEDEDE")}
+        p={10}
+        w={"30%"}
+      >
         <Text textAlign={"center"} color={useColorModeValue("white", "black")} fontSize={"x-large"}>
           Create a new Account
         </Text>

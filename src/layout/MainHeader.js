@@ -5,6 +5,7 @@ import {
   Flex,
   HStack,
   Icon,
+  Switch,
   Text,
   useColorMode,
   useColorModeValue,
@@ -35,7 +36,7 @@ export const MainHeader = () => {
         {Heading?.title}
       </Text>
       <HStack spacing={8}>
-        <Button
+        {/* <Button
           onClick={toggleColorMode}
           _focus={{ boxShadow: "none" }}
           color={"#E8C364"}
@@ -44,7 +45,28 @@ export const MainHeader = () => {
           _hover={{ bg: useColorModeValue("#1E293B", "#E9EAEB") }}
         >
           {colorMode !== "light" ? <BsMoonStarsFill /> : <BsSun />}
-        </Button>
+        </Button> */}
+        <Flex align="center" position="relative">
+          <Switch ml={2} size="lg" onChange={toggleColorMode} colorScheme={useColorModeValue('blue','blackAlpha')} />
+
+          <Icon
+            as={BsMoonStarsFill}
+            display={useColorModeValue("none", "block")}
+            color={"#E8C364"}
+            position="absolute"
+            left="20%"
+            zIndex="1"
+          />
+
+          <Icon
+            as={BsSun}
+            display={useColorModeValue("block", "none")}
+            color={"#E8C364"}
+            position="absolute"
+            right="10%"
+            zIndex="1"
+          />
+        </Flex>
         <HStack>
           <Text fontWeight={"600"}>Tim&apos;s WorkSpace</Text>
           <Icon as={MdKeyboardArrowDown} fontSize={"x-large"} />
