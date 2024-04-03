@@ -41,25 +41,38 @@ export const ConfirmAlert = ({ isOpen, onClose, threadId }) => {
   }, [deleteThreadStatus, resetStatus, onClose, router]);
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} isCentered>
+    <Modal isOpen={isOpen} onClose={onClose} isCentered size={'lg'}> 
       <ModalOverlay />
       <ModalContent
         bg={useColorModeValue("linear-gradient(180deg, #141517 0%, #232528 100%)", "white")}
         color={useColorModeValue("white", "black")}
       >
-        <ModalCloseButton />
         <ModalBody>
           <Center py={10}>
             <Stack spacing={5} textAlign={"center"}>
               <Heading>Are you sure?</Heading>
-              <Text>Your selected email will be deleted.</Text>
-              <HStack justify={"space-around"}>
-                <Button size={"lg"} mr={3} colorScheme={useColorModeValue('gray', 'white')} onClick={onClose}>
+              <Text mt={5} color={useColorModeValue("#E8E8E8", "gray")}>
+                Your selected email will be deleted.
+              </Text>
+              <HStack justify={"space-between"} spacing={10} mt={5}>
+                <Button
+                  size={"lg"}
+                  mr={3}
+                  bg={"#25262B"}
+                  color={useColorModeValue("white", "white")}
+                  _hover={{ bg: "trasparent" }}
+                  _focus={{ bg: "transparent" }}
+                  onClick={onClose}
+                  px={12}
+                >
                   Cancel
                 </Button>
                 <Button
                   colorScheme="red"
+                  bg={"linear-gradient(91.73deg, #FA5252 -2.99%, #A91919 95.8%)"}
+                  _hover={{ bg: "linear-gradient(91.73deg, #FA5252 -2.99%, #A91919 95.8%)" }}
                   size={"lg"}
+                  px={12}
                   onClick={handleDelete}
                   isLoading={deleteThreadStatus === STATUS.FETCHING}
                 >
