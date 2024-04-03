@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">ReachInbox Web App</h1>
 
-## Getting Started
+<p align="center">
+  <img src="./public/assets/logo.png" alt="ReachInbox Logo">
+</p>
 
-First, run the development server:
+<p align="center">A revolutionary AI-driven platform transforming cold outreach.</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 About the Project
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Introducing ReachInbox - an all-in-one solution for businesses to effortlessly find, enrich, and engage high-intent leads using multi-channel outreach across Twitter, LinkedIn, email, and phone. This web app implementation provides seamless integration with intuitive features for enhanced cold email marketing campaigns.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## ✨ Features
 
-## Learn More
+- *Effortless Cold Outreach*: ReachInbox streamlines the process of finding and engaging with high-intent leads.
+- *Data Fetching and Integration*: Seamless integration with provided APIs for fetching and managing data.
+- *Keyboard Shortcuts*: Boost productivity with keyboard shortcuts for deleting threads and composing replies.
+- *Light and Dark Mode Support*: Tailor the app's appearance to your preference for an enhanced user experience.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- *Next.js*: React framework for building efficient server-side rendered web applications.
+- *Chakra UI*: A simple, modular component library for React applications.
+- *Zustand*: State management library for React applications with a tiny footprint.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📷 Screenshots
 
-## Deploy on Vercel
+### ✨ Login Page
+<img src="https://github.com/lokendra0905/onebox/assets/112807213/6a35474d-5935-4d5f-ab55-a4d626dd7347" alt="ReachInbox Logo">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### ✨ Home Page
+<img src="https://github.com/lokendra0905/onebox/assets/112807213/08dedfb9-b2fb-4ade-8d7c-56e801715039" alt="ReachInbox Logo">
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### ✨ Onebox Page
+<img src="https://github.com/lokendra0905/onebox/assets/112807213/8180db1f-d205-4e1e-bea7-f299e2f117da" alt="ReachInbox Logo">
+
+### ✨ Email Description Page
+<img src="https://github.com/lokendra0905/onebox/assets/112807213/985b1ae0-6c7a-4b04-ad14-4af50dba3d19" alt="ReachInbox Logo">
+
+### ✨ Reply Box
+<img src="https://github.com/lokendra0905/onebox/assets/112807213/4f7499bb-43e8-46ec-8161-8b1dcbb50730" alt="ReachInbox Logo">
+
+### ✨ Light Mode
+<img src="https://github.com/lokendra0905/onebox/assets/112807213/95409672-7b0c-4a6f-9a26-7503d1a21c52" alt="ReachInbox Logo">
+
+## 📝 Usage
+
+1. *Installation*: Clone the repository and install dependencies.
+2. *Run the Development Server*: Start the development server and navigate to http://localhost:3000.
+3. *Login*: Access the login page and use the provided design to authenticate.
+4. *Explore Features*: Navigate to the onebox screen to fetch data, manage threads, and compose replies.
+5. *Customize*: Toggle between light and dark mode for a personalized experience.
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to open issues and pull requests to contribute to the project's development.
