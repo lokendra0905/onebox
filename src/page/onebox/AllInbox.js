@@ -76,7 +76,7 @@ export const AllInbox = ({ msgId }) => {
       ) : (
         <Box>
           <Text fontWeight={"700"} fontSize={"14px"}>
-            {oneboxData?.length || 0}/25
+            {oneboxData?.length || 0}
             <span
               style={{ fontSize: "14px", fontWeight: "400", color: "#7F7F7F", marginLeft: "6px" }}
             >
