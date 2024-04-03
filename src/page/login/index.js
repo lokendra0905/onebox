@@ -4,7 +4,6 @@ import { FcGoogle } from "react-icons/fc";
 
 export const Login = () => {
   const [loading, setloading] = useState(false);
-  console.log(process.env);
   const login = () => {
     setloading(true);
     window.location.href =
