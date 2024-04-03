@@ -8,8 +8,8 @@ import { AuthProvider } from "@/context/Auth";
 export const Provider = ({ children }) => {
   return (
     <ChakraProvider theme={customTheme}>
-      <AuthProvider>
-        <Suspense>
+      <Suspense>
+        <AuthProvider>
           <Box
             backgroundColor={useColorModeValue("black", "white")}
             color={useColorModeValue("white", "black")}
@@ -17,8 +17,8 @@ export const Provider = ({ children }) => {
           >
             {children}
           </Box>
-        </Suspense>
-      </AuthProvider>
+        </AuthProvider>
+      </Suspense>
     </ChakraProvider>
   );
 };
